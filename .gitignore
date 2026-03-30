@@ -1,0 +1,54 @@
+# ========================
+# Laravel / PHP
+# ========================
+/vendor/
+/node_modules/
+/public/hot
+/public/storage
+/storage/*.key
+/storage/logs/*
+/bootstrap/cache/*.php
+
+# ========================
+# Environment
+# ========================
+.env
+.env.backup
+.env.production
+.env.local
+
+# ========================
+# IDE / OS
+# ========================
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# ========================
+# Logs & cache
+# ========================
+npm-debug.log
+yarn-error.log
+*.log
+
+# ========================
+# Compiled files
+# ========================
+/public/build/
+/public/mix-manifest.json
+
+# ========================
+# Tests & coverage
+# ========================
+/coverage/
+/.phpunit.result.cache
+
+# ========================
+# Misc
+# ========================
+*.swp
+*.bak
+*.tmp
