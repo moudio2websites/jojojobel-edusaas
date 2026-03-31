@@ -1,3 +1,99 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+:root {
+    --jojo-sidebar-bg:     #1a2744;
+    --jojo-sidebar-text:   rgba(255,255,255,0.7);
+    --jojo-sidebar-active: rgba(255,255,255,0.08);
+    --jojo-accent:         #4f8ef7;
+}
+
+body { background: #f4f6fb; font-family: 'Segoe UI', sans-serif; }
+
+/* ── Sidebar ── */
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: var(--jojo-sidebar-bg);
+    position: fixed;
+    top: 0; left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+.sidebar-brand {
+    padding: 20px 16px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.sidebar-brand .app-name   { color:#fff; font-weight:600; font-size:15px; }
+.sidebar-brand .tenant-name{ color:rgba(255,255,255,0.45); font-size:12px; margin-top:2px; }
+
+.sidebar-section { padding: 8px 0; }
+.sidebar-section-label {
+    color: rgba(255,255,255,0.3);
+    font-size: 10px;
+    letter-spacing: .08em;
+    padding: 6px 16px 2px;
+    text-transform: uppercase;
+}
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    color: var(--jojo-sidebar-text);
+    text-decoration: none;
+    font-size: 13.5px;
+    transition: background .15s;
+    border-left: 2px solid transparent;
+}
+.sidebar-link:hover { background: var(--jojo-sidebar-active); color:#fff; }
+.sidebar-link.active {
+    background: var(--jojo-sidebar-active);
+    color: #fff;
+    border-left-color: var(--jojo-accent);
+}
+.sidebar-link i { font-size: 15px; width: 18px; text-align: center; }
+
+/* ── Main wrapper ── */
+.main-wrapper { margin-left: 240px; min-height: 100vh; display:flex; flex-direction:column; }
+
+/* ── Topbar ── */
+.topbar {
+    background: #fff;
+    border-bottom: 1px solid #e8eaf0;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.topbar-title { font-weight: 600; font-size: 15px; color: #1a2744; }
+
+/* ── Stat cards ── */
+.stat-card {
+    background: #fff;
+    border: 1px solid #e8eaf0;
+    border-radius: 10px;
+    padding: 16px 18px;
+}
+.stat-card .label { font-size: 12px; color: #8a93a6; margin-bottom: 4px; }
+.stat-card .value { font-size: 26px; font-weight: 700; color: #1a2744; }
+.stat-card .sub   { font-size: 12px; margin-top: 2px; }
+
+/* ── Content area ── */
+.content-area { padding: 24px; flex: 1; }
+
+/* ── Tables ── */
+.table-jojo thead th {
+    background: #f4f6fb;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8a93a6;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    border-bottom: 1px solid #e8eaf0;
+}
+.table-jojo tbody tr:hover { background: #f9fafc; }
