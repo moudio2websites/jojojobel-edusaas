@@ -1,13 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EleveController;
 use App\Http\Controllers\DashboardController;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Routes à venir — on les active au fur et à mesure
-    Route::get('/eleves',      fn() => view('coming-soon', ['module' => 'Élèves']))->name('eleves.index');
+    Route::resource('eleves', EleveController::class)->parameters([
+    'eleves' => 'eleve'
+]);
     Route::get('/inscriptions',fn() => view('coming-soon', ['module' => 'Inscriptions']))->name('inscriptions.index');
     Route::get('/notes',       fn() => view('coming-soon', ['module' => 'Notes & Bulletins']))->name('notes.index');
     Route::get('/enseignants', fn() => view('coming-soon', ['module' => 'Enseignants']))->name('enseignants.index');
